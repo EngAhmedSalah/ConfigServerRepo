@@ -15,14 +15,12 @@ management:
     web:
       exposure:
         include: "*"
-  endpoint:
-    health:
-      show-details: always
+  info:
     env:
       enabled: true
-    refresh:
+    build:
       enabled: true
-    info:
+    git:
       enabled: true
 
 info:
@@ -30,4 +28,4 @@ info:
     name: User Service
     description: This service handles user CRUD operations
     version: 1.0.0
-    author: Your Name
+    author: Ahmed Salah
