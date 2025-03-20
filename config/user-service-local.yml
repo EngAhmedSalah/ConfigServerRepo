@@ -1,6 +1,19 @@
-example.property= I AM DEV
+datasource:
+  url: jdbc:mysql://localhost:3307/user_database
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  username: root
+  password: root
 
-# DataSource settings: set here your own configurations for the database 
-spring.datasource.url = jdbc:postgresql://database:5432/ostock_dev
-spring.datasource.username = postgres
-spring.datasource.password = {cipher}f4609209a3e75d8ac79a5e3063ce151c2cd28aa431170bb06974b9421e807b6a
+jpa:
+  hibernate:
+    ddl-auto: update
+  show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
