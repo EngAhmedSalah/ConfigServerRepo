@@ -1,13 +1,24 @@
-datasource:
-  url: jdbc:mysql://localhost:3307/user_database
-  driver-class-name: com.mysql.cj.jdbc.Driver
-  username: root
-  password: root
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3307/user_database
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  config:
+    import: optional:configserver:http://localhost:8888
+  profiles:
+    active: local
+  cloud:
+    config:
+      fail-fast: true
+      uri: http://localhost:8888
 
-jpa:
-  hibernate:
-    ddl-auto: update
-  show-sql: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 eureka:
   client:
