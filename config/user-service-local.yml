@@ -10,15 +10,24 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
-    endpoint:
-      health:
-        show-details: always
-      env:
-        enabled: true
-      refresh:
-        enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    env:
+      enabled: true
+    refresh:
+      enabled: true
+    info:
+      enabled: true
+
+info:
+  app:
+    name: User Service
+    description: This service handles user CRUD operations
+    version: 1.0.0
+    author: Your Name
